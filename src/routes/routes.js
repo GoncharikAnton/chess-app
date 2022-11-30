@@ -1,17 +1,15 @@
 import {Route, Routes} from "react-router";
 import {LoginPage} from "../layouts/main/LoginPage/LoginPage";
-import {useUserStatus} from "../myHooks/useUserStatus";
+import {useContext, useEffect} from "react";
+import {AppContext} from "../context/AppContext";
+import {MainPage} from "../layouts/main/MainPage/MainPage";
 
 export const MyRoutes = () => {
-    // const userStatus = useUserStatus('')
-    const userStatus = false
+
     return (
         <>
             <Routes>
-                {userStatus ?
-                    <Route path={'/'} exact element={<LoginPage/>}/> :
-                    <Route path={'/'} exact element={<LoginPage/>}/>
-                }
+                <Route path={'/'} exact element={<MainPage/>}/>
 
                 {/*<Route path={'/products'} exact element={<Products/>}/>*/}
 

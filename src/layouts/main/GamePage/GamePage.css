@@ -1,0 +1,11 @@
+.GamePage{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.boardContainer{
+    width: 600px;
+    height: 600px;
+}
