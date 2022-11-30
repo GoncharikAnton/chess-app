@@ -3,13 +3,16 @@ import {DragPreviewImage, useDrag} from 'react-dnd'
 
 import './Piece.css'
 
-export const Piece = ({piece: {type, color}}) => {
+export const Piece = ({piece: {type, color}, location}) => {
 
     const [{isDragging}, drag, preview] = useDrag({
         type: 'piece',
         item: () => {
             return {
                 id: `${color}${type.toUpperCase()}`,
+                type,
+                color,
+                fromLocation: location,
             }
         },
         collect: (monitor) => {

@@ -1,13 +1,19 @@
 import React from "react";
 import {Square} from "../Square/Square";
 import {Piece} from "../Piece/Piece";
-import './BoardSquare.css';
 import {useDrop} from "react-dnd";
+import {move} from '../../Game';
 
-export const BoardSquare = ({piece, black}) => {
+import './BoardSquare.css';
+
+export const BoardSquare = ({piece, black, location}) => {
     const [, drop] = useDrop({
         accept: 'piece',
-        drop: (item) => console.log(item)
+        drop: (item) => {
+            const {type, color, fromLocation} = item;
+            move(fromLocation, location)
+
+        }
     })
     return (
         <div
@@ -20,6 +26,7 @@ export const BoardSquare = ({piece, black}) => {
                 {
                     piece && <Piece
                         piece={piece}
+                        location={location}
                     />
                 }
             </Square>
