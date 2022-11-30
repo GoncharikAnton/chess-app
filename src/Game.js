@@ -7,4 +7,6 @@ export const gameSubj = new BehaviorSubject({
     board: chess.board()
 })
 
+export const move = (from, to) => {
 
+}

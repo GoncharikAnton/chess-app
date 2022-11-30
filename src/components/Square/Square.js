@@ -1,5 +1,14 @@
+import './Square.css'
 
+export const Square = ({children, black}) => {
 
-export const Square = () => {
+    const bgSquareColor = black ? 'squareBlack' : 'squareWhite'
 
+    return (
+        <div
+            className={`${bgSquareColor} boardSquare`}
+        >
+            {children}
+        </div>
+    )
 }
